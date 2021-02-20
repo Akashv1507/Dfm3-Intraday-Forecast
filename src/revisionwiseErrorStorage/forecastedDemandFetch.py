@@ -39,7 +39,7 @@ class ForecastedDemandFetchRepo():
             
             try:
                 cur = connection.cursor()
-                fetch_sql = "SELECT time_stamp, entity_tag, forecasted_demand_value FROM dfm3_forecast_revision_store WHERE time_stamp BETWEEN TO_DATE(:start_time,'YYYY-MM-DD HH24:MI:SS') and TO_DATE(:end_time,'YYYY-MM-DD HH24:MI:SS') and revision_no = :rNo and (enitity_tag='WRLDCMP.SCADA1.A0047000' )  ORDER BY entity_tag, time_stamp"
+                fetch_sql = "SELECT time_stamp, entity_tag, forecasted_demand_value FROM dfm3_forecast_revision_store WHERE time_stamp BETWEEN TO_DATE(:start_time,'YYYY-MM-DD HH24:MI:SS') and TO_DATE(:end_time,'YYYY-MM-DD HH24:MI:SS') and revision_no = :rNo and (entity_tag='WRLDCMP.SCADA1.A0047000' )  ORDER BY entity_tag, time_stamp"
                 cur.execute("ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS' ")
                 forecastedDemandDf = pd.read_sql(fetch_sql, params={
                                  'start_time': start_time_value, 'end_time': end_time_value, 'rNo': revisionNo}, con=connection)
