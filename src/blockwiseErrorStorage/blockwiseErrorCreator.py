@@ -31,10 +31,10 @@ def createBlockwiseError(startDate: dt.datetime, endDate: dt.datetime, revisionN
     while currDate <= endDate:
         #fetch actual demand
         actualDemandDf = obj_actualDemandFetchRepo.fetchActualDemand(currDate, currDate)
-
+        
         #fetch forecasted demand
         forecastedDemandDf = obj_forecastedDemandFetchRepo.fetchForecastedDemand(currDate, currDate, revisionNo)
-
+        
         #calculate blockwise mw error, List[Tuple]: [(TIME_STAMP, ENTITY_TAG, revsionNo, mwError, %mwError),]
         data:List[Tuple] = calculateMwError(actualDemandDf, forecastedDemandDf, revisionNo)
 

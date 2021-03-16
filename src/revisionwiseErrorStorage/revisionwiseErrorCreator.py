@@ -34,8 +34,10 @@ def createRevisionwiseError(startDate: dt.datetime, endDate: dt.datetime, config
         for revisionNo in revisionList:
             #fetch actual demand
             actualDemandDf = obj_actualDemandFetchRepo.fetchActualDemand(currDate, currDate)
+            
             #fetch forecasted demand
             forecastedDemandDf = obj_forecastedDemandFetchRepo.fetchForecastedDemand(currDate, currDate, revisionNo)
+            
             #calculate RMSE, MAE, MAPE
             data:List[Tuple] = calculateRevisionwiseErrors(actualDemandDf, forecastedDemandDf, revisionNo, currDate.date())
             #push errors to db
