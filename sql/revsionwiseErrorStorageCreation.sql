@@ -8,6 +8,6 @@ mae number,
 mape number,
 rmse number,
 rmse_percentage number,
-constraints unique_dfm2_revWise_error unique(date_key,entity_tag,revision_no),
-constraints pk_dfm2_revWise_error primary key(id)
+constraints unique_dfm3_revWise_error unique(date_key,entity_tag,revision_no),
+constraints pk_dfm3_revWise_error primary key(id)
 )

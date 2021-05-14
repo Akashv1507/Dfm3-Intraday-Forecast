@@ -26,7 +26,7 @@ def doIntradayRevision(startTime: dt.datetime, endTime: dt.datetime, configDict 
     isRevisionSuccessCount = 0
     countRevision = 0
     # listOfEntity =['WRLDCMP.SCADA1.A0046945','WRLDCMP.SCADA1.A0046948','WRLDCMP.SCADA1.A0046953','WRLDCMP.SCADA1.A0046957','WRLDCMP.SCADA1.A0046962','WRLDCMP.SCADA1.A0046978','WRLDCMP.SCADA1.A0046980','WRLDCMP.SCADA1.A0047000']
-    listOfEntity =['WRLDCMP.SCADA1.A0047000']
+    listOfEntity =['WRLDCMP.SCADA1.A0047000', 'WRLDCMP.SCADA1.A0046980', 'WRLDCMP.SCADA1.A0046957', 'WRLDCMP.SCADA1.A0046978']
 
     for entity in listOfEntity:
         #fetch last 6 block actual demand
